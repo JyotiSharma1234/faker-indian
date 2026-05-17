@@ -1,0 +1,91 @@
+dishes:
+  - Butter Chicken
+  - Masala Dosa
+  - Hyderabadi Biryani
+  - Chole Bhature
+  - Pav Bhaji
+  - Rogan Josh
+  - Dal Makhani
+  - Idli Sambar
+  - Vada Pav
+  - Fish Curry
+  - Paneer Tikka
+  - Palak Paneer
+  - Aloo Paratha
+
+restaurants:
+  - Saravana Bhavan
+  - Bademiya
+  - Karim's
+  - MTR
+  - Britannia & Co.
+  - Indian Coffee House
+  - Paradise Biryani
+  - Trishna
+  - Gajalee
+  - Sagar Ratna
+  - Punjabi Dhaba
+  - Punjab Grill
+  - Punjab Biryani House
+  - Haldiram's
+  - Taj Hotel
+  - Leela Palace
+  - Oberoi Hotel
+  - ITC Hotel
+  - Hyatt Hotel
+  - Marriott Hotel
+  - Hilton Hotel
+  - Sheraton Hotel
+  - Radisson Hotel
+  - Novotel Hotel
+  - Hyatt Regency
+  - Marriott Regency
+  - Hilton Regency
+  - Sheraton Regency
+  - Radisson Regency
+  - Novotel Regency
+  - Hyatt Regency
+  - Marriott Regency
+  - Hilton Regency
+  - Sheraton Regency
+  - Radisson Regency
+  - Novotel Regency
+  - Hyatt Regency
+  - Marriott Regency
+  - Hilton Regency
+  - Sheraton Regency
+
+sweets:
+  - Ras Malai
+  - Gajar Halwa
+  - Gulab Jamun
+  - Jalebi
+  - Rasgulla
+  - Kaju Katli
+  - Peda
+  - Barfi
+
+cuisines:
+  - North Indian
+  - South Indian
+  - Bengali
+  - Gujarati
+  - Punjabi
+  - Rajasthani
+  - Maharashtrian
+  - Coastal
+  - Chettinad
+  - Mughlai
+
+street_food:
+  - Pani Puri
+  - Samosa
+  - Kachori
+  - Vada Pav
+  - Dahi Puri
+  - Bhel Puri
+  - Kathi Roll
+  - Momos
+  - Jalebi
+  - Kulfi
+  - Poha

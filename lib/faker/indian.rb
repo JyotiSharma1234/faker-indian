@@ -10,6 +10,8 @@ require_relative "indian/payment"
 require_relative "indian/vehicle"
 require_relative "indian/address"
 require_relative "indian/phone"
+require_relative "indian/food"
+require_relative "indian/languages"
 
 module Faker
   module Indian

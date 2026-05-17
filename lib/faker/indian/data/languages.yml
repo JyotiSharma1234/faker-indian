@@ -1,0 +1,172 @@
+hindi:
+  code: hi
+  name: Hindi
+  native_name: "हिन्दी"
+  first_names:
+    - Arjun
+    - Priya
+    - Rohan
+    - Ananya
+    - Vikram
+    - Kavya
+  last_names:
+    - Sharma
+    - Verma
+    - Singh
+    - Gupta
+    - Yadav
+    - Mishra
+
+tamil:
+  code: ta
+  name: Tamil
+  native_name: "தமிழ்"
+  first_names:
+    - Karthik
+    - Divya
+    - Arun
+    - Lakshmi
+    - Suresh
+    - Meena
+  last_names:
+    - Iyer
+    - Reddy
+    - Natarajan
+    - Subramanian
+    - Krishnan
+    - Pillai
+
+telugu:
+  code: te
+  name: Telugu
+  native_name: "తెలుగు"
+  first_names:
+    - Ravi
+    - Swathi
+    - Prasad
+    - Anjali
+    - Venkat
+    - Padma
+  last_names:
+    - Rao
+    - Reddy
+    - Naidu
+    - Chowdary
+    - Goud
+    - Prasad
+
+bengali:
+  code: bn
+  name: Bengali
+  native_name: "বাংলা"
+  first_names:
+    - Arnab
+    - Riya
+    - Sourav
+    - Debjani
+    - Anirban
+    - Mitali
+  last_names:
+    - Banerjee
+    - Chatterjee
+    - Mukherjee
+    - Das
+    - Ghosh
+    - Sen
+
+marathi:
+  code: mr
+  name: Marathi
+  native_name: "मराठी"
+  first_names:
+    - Ajay
+    - Sayali
+    - Nikhil
+    - Shruti
+    - Sachin
+    - Pooja
+  last_names:
+    - Patil
+    - Deshmukh
+    - Kulkarni
+    - Joshi
+    - Pawar
+    - Jadhav
+
+gujarati:
+  code: gu
+  name: Gujarati
+  native_name: "ગુજરાતી"
+  first_names:
+    - Harsh
+    - Nisha
+    - Jay
+    - Kinjal
+    - Mitul
+    - Heena
+    - Harshal
+    - Harshad
+  last_names:
+    - Patel
+    - Shah
+    - Mehta
+    - Desai
+    - Gandhi
+    - Thakkar
+
+kannada:
+  code: kn
+  name: Kannada
+  native_name: "ಕನ್ನಡ"
+  first_names:
+    - Prakash
+    - Asha
+    - Manjunath
+    - Kavitha
+    - Ramesh
+    - Sunitha
+  last_names:
+    - Gowda
+    - Shetty
+    - Rao
+    - Murthy
+    - Hegde
+    - Bhat
+
+malayalam:
+  code: ml
+  name: Malayalam
+  native_name: "മലയാളം"
+  first_names:
+    - Unni
+    - Meera
+    - Anoop
+    - Reshma
+    - Sajan
+    - Deepa
+  last_names:
+    - Nair
+    - Menon
+    - Pillai
+    - Kurup
+    - Varma
+    - Panicker
+
+punjabi:
+  code: pa
+  name: Punjabi
+  native_name: "ਪੰਜਾਬੀ"
+  first_names:
+    - Harpreet
+    - Simran
+    - Gurpreet
+    - Navjot
+    - Manpreet
+    - Jasleen
+  last_names:
+    - Singh
+    - Kaur
+    - Gill
+    - Sandhu
+    - Brar
+    - Dhillon
