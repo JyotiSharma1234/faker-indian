@@ -1,0 +1,41 @@
+first_names:
+  - Arjun
+  - Priya
+  - Rohan
+  - Sneha
+  - Amit
+  - Rahul
+  - Ananya
+  - Vikram
+  - Kavya
+  - Dev
+  - Ishaan
+  - Meera
+  - Aditya
+  - Nisha
+  - Sanjay
+  - Pooja
+
+last_names:
+  - Sharma
+  - Patel
+  - Verma
+  - Singh
+  - Gupta
+  - Kumar
+  - Reddy
+  - Iyer
+  - Joshi
+  - Nair
+  - Mehta
+  - Kulkarni
+  - Desai
+  - Rao
+  - Malhotra
+
+prefixes:
+  - Mr.
+  - Mrs.
+  - Ms.
+  - Dr.
+  - Prof.

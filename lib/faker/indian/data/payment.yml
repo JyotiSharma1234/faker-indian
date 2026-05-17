@@ -1,0 +1,23 @@
+handles:
+  - ybl
+  - oksbi
+  - okhdfcbank
+  - paytm
+  - ibl
+  - okicici
+  - okaxis
+
+banks:
+  HDFC: HDFC Bank
+  SBIN: State Bank of India
+  ICIC: ICICI Bank
+  AXIS: Axis Bank
+  KKBK: Kotak Mahindra Bank
+  PNB: Punjab National Bank
+
+names:
+  - rahul
+  - priya
+  - amit
+  - sneha
+  - arjun
