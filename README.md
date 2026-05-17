@@ -1,6 +1,6 @@
 # faker-indian
 
-Indian locale data generators for Ruby.
+India-first fake data generator for Ruby apps.
 
 `faker-indian` helps you generate realistic fake Indian data such as names, PAN numbers, Aadhaar numbers, GSTINs, UPI IDs, vehicle registration numbers, phone numbers, addresses, and more.
 
