@@ -26,4 +26,28 @@ RSpec.describe Faker::Indian::Food do
       expect(described_class::STREET_FOOD).to include(described_class.street_food)
     end
   end
+
+  describe ".meal" do
+    it "returns a known meal" do
+      expect(described_class::MEALS).to include(described_class.meal)
+    end
+  end
+
+  describe ".beverage" do
+    it "returns a known beverage" do
+      expect(described_class::BEVERAGES).to include(described_class.beverage)
+    end
+  end
+
+  describe ".combo" do
+    it "combines dish and beverage" do
+      expect(described_class.combo).to match(/\A.+ with .+\z/)
+    end
+  end
+
+  describe ".spice_level" do
+    it "returns a known spice level" do
+      expect(described_class::SPICE_LEVELS).to include(described_class.spice_level)
+    end
+  end
 end

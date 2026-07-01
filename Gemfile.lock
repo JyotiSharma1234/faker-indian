@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    faker-indian (0.1.0)
+    faker-indian (0.2.0)
       faker
 
 GEM

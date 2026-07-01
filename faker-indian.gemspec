@@ -6,15 +6,15 @@ Gem::Specification.new do |spec|
   spec.name = "faker-indian"
   spec.version = Faker::Indian::VERSION
   spec.authors = ["Jyoti Sharma"]
-  spec.email = ["sjyoti4321@gmail.com", ]
+  spec.email = ["jyoti.sharma.ror@gmail.com"]
 
   spec.summary = "Fake Indian data generators for Ruby"
-  spec.description = "Generate fake Indian identity, payment, and address data for testing."
+  spec.description = "Generate fake Indian identity, payment, languages, food and address data for testing and development."
   spec.homepage = "https://github.com/JyotiSharma1234/faker-indian"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 3.1.0"
+  spec.required_ruby_version = ">= 2.0.0"
 
-  spec.metadata["allowed_push_host"] = spec.homepage
+  spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/JyotiSharma1234/faker-indian"
@@ -34,5 +34,4 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "faker"
-
 end

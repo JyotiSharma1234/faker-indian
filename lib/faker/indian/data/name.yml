@@ -39,3 +39,16 @@ prefixes:
   - Ms.
   - Dr.
   - Prof.
+
+middle_names:
+  - Kumar
+  - Devi
+  - Lal
+  - Bai
+  - Chand
+  - Prasad
+
+suffixes:
+  - Ji
+  - Bai
+  - Sahib

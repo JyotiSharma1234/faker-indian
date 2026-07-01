@@ -42,4 +42,27 @@ RSpec.describe Faker::Indian::Identity do
       expect(passport).to match(/\A[A-Z]\d{7}\z/)
     end
   end
+
+  describe ".aadhaar_masked" do
+    it "masks all but the last four digits" do
+      expect(described_class.aadhaar_masked).to match(/\AXXXX XXXX \d{4}\z/)
+    end
+  end
+
+  describe ".driving_license" do
+    it "generates valid driving license format" do
+      license = described_class.driving_license(state: "MH")
+
+      expect(license).to match(/\AMH-\d{2}-\d{4}-\d{7}\z/)
+    end
+  end
+
+  describe ".gstin with pan" do
+    it "embeds the provided pan" do
+      pan = described_class.pan
+      gstin = described_class.gstin(pan: pan)
+
+      expect(gstin).to include(pan)
+    end
+  end
 end

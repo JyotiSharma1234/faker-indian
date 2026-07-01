@@ -5,9 +5,9 @@ require "faker"
 module Faker
   module Indian
     class Languages
-      _data = Data.load(:languages)
+      data = Data.load(:languages)
 
-      LANGUAGES = _data.freeze
+      LANGUAGES = data.freeze
 
       class << self
         def name(language: nil)

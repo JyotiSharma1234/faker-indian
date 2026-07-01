@@ -5,13 +5,17 @@ require "faker"
 module Faker
   module Indian
     class Food
-      _data = Data.load(:food)
+      data = Data.load(:food)
 
-      DISHES = _data.fetch(:dishes).freeze
-      RESTAURANTS = _data.fetch(:restaurants).freeze
-      CUISINES = _data.fetch(:cuisines).freeze
-      STREET_FOOD = _data.fetch(:street_food).freeze
-      SWEETS = _data.fetch(:sweets).freeze
+      DISHES = data.fetch(:dishes).freeze
+      RESTAURANTS = data.fetch(:restaurants).freeze
+      CUISINES = data.fetch(:cuisines).freeze
+      STREET_FOOD = data.fetch(:street_food).freeze
+      SWEETS = data.fetch(:sweets).freeze
+      MEALS = data.fetch(:meals).freeze
+      BEVERAGES = data.fetch(:beverages).freeze
+      SPICE_LEVELS = data.fetch(:spice_levels).freeze
+
       class << self
         def dish
           DISHES.sample(random: random)
@@ -31,6 +35,22 @@ module Faker
 
         def sweet
           SWEETS.sample(random: random)
+        end
+
+        def meal
+          MEALS.sample(random: random)
+        end
+
+        def beverage
+          BEVERAGES.sample(random: random)
+        end
+
+        def combo
+          "#{dish} with #{beverage}"
+        end
+
+        def spice_level
+          SPICE_LEVELS.sample(random: random)
         end
 
         private

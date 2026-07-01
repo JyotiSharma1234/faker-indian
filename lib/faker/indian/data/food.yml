@@ -89,3 +89,21 @@ street_food:
   - Jalebi
   - Kulfi
   - Poha
+
+meals:
+  - breakfast
+  - lunch
+  - dinner
+
+beverages:
+  - Masala Chai
+  - Filter Coffee
+  - Lassi
+  - Nimbu Pani
+  - Mango Lassi
+  - Thandai
+
+spice_levels:
+  - mild
+  - medium
+  - spicy

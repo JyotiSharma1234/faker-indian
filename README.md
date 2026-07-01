@@ -2,7 +2,7 @@
 
 India-first fake data generator for Ruby apps.
 
-`faker-indian` helps you generate realistic fake Indian data such as names, PAN numbers, Aadhaar numbers, GSTINs, UPI IDs, vehicle registration numbers, phone numbers, addresses, regional-language names, food items, and more.
+`faker-indian` helps you generate realistic fake Indian data — names, identities, payments, addresses, vehicles, regional-language names, food, companies, railway PNRs, and more.
 
 Perfect for:
 
@@ -17,13 +17,16 @@ Perfect for:
 ## Features
 
 - 🇮🇳 Indian-first fake data generation
-- 👤 Indian names & identities
+- 👤 Indian names & identities (PAN, Aadhaar, GSTIN, driving license, and more)
 - 🌐 Regional language names (Hindi, Tamil, Telugu, and more)
-- 💳 Payment & banking details
+- 💳 Payment & banking details (UPI, IFSC, demat account)
+- 🏢 Company names & CIN numbers
+- 🚂 Railway PNR, train names, and stations
 - 🚗 Vehicle registration numbers
-- 🏠 Indian addresses & PIN codes
-- 📞 Mobile numbers
+- 🏠 Indian addresses across 70+ cities
+- 📞 Mobile, landline, and telecom operators
 - 🍛 Indian dishes, cuisines, and restaurants
+- 📋 One-shot `Faker::Indian.profile` for seed data
 - 📁 YAML-backed data — easy to extend without changing logic
 - ⚡ Lightweight and easy to use
 
@@ -34,7 +37,7 @@ Perfect for:
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'faker-indian'
+gem "faker-indian"
 ```
 
 Then execute:
@@ -62,20 +65,17 @@ Faker::Indian::Name.full_name
 Faker::Indian::Identity.pan
 # => "ABCDE1234F"
 
-Faker::Indian::Identity.aadhaar
-# => "4567 8912 3456"
-
-Faker::Indian::Identity.aadhaar
-# => "4567 8912 3456"
-
 Faker::Indian::Payment.upi_id
-# => "rahul123@paytm"
-Faker::Vehicle::
+# => "rahul42@paytm"
+
 Faker::Indian::Languages.full_name(language: :tamil)
 # => "Karthik Iyer"
 
-Faker::Indian::Food.dish
-# => "Masala Dosa"
+Faker::Indian::Company.cin
+# => "U72200MH2010PTC123456"
+
+Faker::Indian.profile
+# => { name: "...", phone: "...", pan: "...", ... }
 ```
 
 ---
@@ -93,11 +93,20 @@ Faker::Indian::Name.first_name
 Faker::Indian::Name.last_name
 # => "Patel"
 
+Faker::Indian::Name.middle_name
+# => "Kumar"
+
 Faker::Indian::Name.full_name
 # => "Rohan Verma"
 
+Faker::Indian::Name.full_name(language: :hindi)
+# => "Ananya Sharma"
+
 Faker::Indian::Name.prefix
 # => "Dr."
+
+Faker::Indian::Name.suffix
+# => "Ji"
 ```
 
 ---
@@ -146,14 +155,26 @@ Faker::Indian::Identity.pan
 Faker::Indian::Identity.aadhaar
 # => "1234 5678 9012"
 
+Faker::Indian::Identity.aadhaar_masked
+# => "XXXX XXXX 4567"
+
 Faker::Indian::Identity.gstin
 # => "27ABCDE1234F1Z5"
+
+Faker::Indian::Identity.gstin(pan: "ABCDE1234F")
+# => "27ABCDE1234F1Z5"  # embeds the given PAN
 
 Faker::Indian::Identity.voter_id
 # => "ABC1234567"
 
 Faker::Indian::Identity.passport
 # => "N1234567"
+
+Faker::Indian::Identity.driving_license
+# => "MH-12-2018-4567890"
+
+Faker::Indian::Identity.driving_license(state: "Karnataka")
+# => "KA-04-2022-1234567"
 ```
 
 ---
@@ -166,6 +187,9 @@ Generate fake Indian banking and payment data.
 Faker::Indian::Payment.upi_id
 # => "amit@oksbi"
 
+Faker::Indian::Payment.upi_id(name: "Rahul Sharma")
+# => "rahulsharma42@paytm"
+
 Faker::Indian::Payment.ifsc
 # => "HDFC0001234"
 
@@ -174,9 +198,49 @@ Faker::Indian::Payment.bank_name
 
 Faker::Indian::Payment.account_number
 # => "123456789012"
+
+Faker::Indian::Payment.demat_account
+# => "120816001234567"
+
+Faker::Indian::Payment.bank_details
+# => { bank_name: "HDFC Bank", ifsc: "HDFC0001234", account_number: "123456789012" }
 ```
 
 Aliases: `upi` (for `upi_id`), `ifsc_code` (for `ifsc`).
+
+---
+
+### Company
+
+Generate Indian company names and CIN numbers.
+
+```ruby
+Faker::Indian::Company.name
+# => "Bharat Tech Solutions Pvt Ltd"
+
+Faker::Indian::Company.type
+# => "Private Limited"
+
+Faker::Indian::Company.cin
+# => "U72200MH2010PTC123456"
+```
+
+---
+
+### Travel
+
+Generate railway-related fake data.
+
+```ruby
+Faker::Indian::Travel.pnr
+# => "4829173056"
+
+Faker::Indian::Travel.train_name
+# => "Rajdhani Express"
+
+Faker::Indian::Travel.station
+# => "Mumbai CST"
+```
 
 ---
 
@@ -188,19 +252,30 @@ Generate Indian vehicle registration numbers.
 Faker::Indian::Vehicle.registration_number
 # => "KA01MJ4587"
 
+Faker::Indian::Vehicle.registration_number(state: "MH")
+# => "MH14DT4321"
+
 Faker::Indian::Vehicle.state_code
 # => "MH"
+
+Faker::Indian::Vehicle.rto_code
+# => "12"
 ```
 
 ---
 
 ### Address
 
-Generate realistic Indian addresses.
+Generate realistic Indian addresses across 70+ cities.
+
+Pass `state:` as a state name (`"Maharashtra"`) or code (`"MH"`) to filter location methods.
 
 ```ruby
 Faker::Indian::Address.city
 # => "Pune"
+
+Faker::Indian::Address.city(state: "Karnataka")
+# => "Bengaluru"
 
 Faker::Indian::Address.state
 # => "Maharashtra"
@@ -208,19 +283,46 @@ Faker::Indian::Address.state
 Faker::Indian::Address.pincode
 # => "411001"
 
+Faker::Indian::Address.state_code
+# => "MH"
+
+Faker::Indian::Address.district
+# => "Koramangala"
+
+Faker::Indian::Address.landmark
+# => "Near Metro Station"
+
+Faker::Indian::Address.line1
+# => "221 MG Road"
+
 Faker::Indian::Address.full_address
-# => "221 MG Road, Pune, Maharashtra - 411001"
+# => "221 MG Road, Koramangala, Pune, Maharashtra - 411001"
+
+Faker::Indian::Address.full_address(state: "Gujarat")
+# => "45 Ring Road, Satellite, Ahmedabad, Gujarat - 380001"
 ```
 
 ---
 
 ### Phone
 
-Generate Indian mobile numbers.
+Generate Indian phone numbers and telecom data.
 
 ```ruby
 Faker::Indian::Phone.mobile_number
 # => "+91 9876543210"
+
+Faker::Indian::Phone.mobile_number(formatted: false)
+# => "9876543210"
+
+Faker::Indian::Phone.landline
+# => "022-1234567"
+
+Faker::Indian::Phone.operator
+# => "Jio"
+
+Faker::Indian::Phone.whatsapp_number
+# => "+91 9123456789"
 ```
 
 ---
@@ -244,6 +346,43 @@ Faker::Indian::Food.street_food
 
 Faker::Indian::Food.sweet
 # => "Gulab Jamun"
+
+Faker::Indian::Food.meal
+# => "lunch"
+
+Faker::Indian::Food.beverage
+# => "Filter Coffee"
+
+Faker::Indian::Food.combo
+# => "Masala Dosa with Filter Coffee"
+
+Faker::Indian::Food.spice_level
+# => "medium"
+```
+
+---
+
+### Profile
+
+Generate a complete Indian user profile in one call — ideal for seeds and demos.
+
+```ruby
+Faker::Indian.profile
+# or
+Faker::Indian::Profile.generate
+
+# =>
+# {
+#   name: "Sneha Kulkarni",
+#   phone: "+91 9123456789",
+#   pan: "BQWPE1234K",
+#   aadhaar: "4567 1234 8910",
+#   gstin: "27BQWPE1234K1Z5",
+#   upi: "sneha@okicici",
+#   vehicle: "MH14DT4321",
+#   address: "221 FC Road, Andheri, Pune, Maharashtra - 411001",
+#   dish: "Masala Dosa"
+# }
 ```
 
 ---
@@ -252,17 +391,18 @@ Faker::Indian::Food.sweet
 
 Static data lives in YAML files under `lib/faker/indian/data/` and is loaded by `Faker::Indian::Data`:
 
-
-| File            | Used by     |
-| --------------- | ----------- |
-| `name.yml`      | `Name`      |
+| File | Used by |
+|------|---------|
+| `name.yml` | `Name` |
 | `languages.yml` | `Languages` |
-| `identity.yml`  | `Identity`  |
-| `payment.yml`   | `Payment`   |
-| `vehicle.yml`   | `Vehicle`   |
-| `address.yml`   | `Address`   |
-| `food.yml`      | `Food`      |
-
+| `identity.yml` | `Identity` |
+| `payment.yml` | `Payment` |
+| `company.yml` | `Company` |
+| `travel.yml` | `Travel` |
+| `vehicle.yml` | `Vehicle` |
+| `address.yml` | `Address` |
+| `phone.yml` | `Phone` |
+| `food.yml` | `Food` |
 
 To add entries, edit the relevant YAML file. To add a new generator, create a new YAML file and a matching Ruby class that calls `Data.load(:your_file)`.
 
@@ -274,11 +414,14 @@ To add entries, edit the relevant YAML file. To add a new generator, create a ne
 
 ```ruby
 10.times do
+  profile = Faker::Indian.profile
+
   User.create!(
-    name: Faker::Indian::Name.full_name,
-    phone: Faker::Indian::Phone.mobile_number,
-    pan: Faker::Indian::Identity.pan,
-    upi: Faker::Indian::Payment.upi_id
+    name: profile[:name],
+    phone: profile[:phone],
+    pan: profile[:pan],
+    upi: profile[:upi],
+    address: profile[:address]
   )
 end
 ```
@@ -296,6 +439,11 @@ FactoryBot.define do
   factory :restaurant do
     name    { Faker::Indian::Food.restaurant_name }
     cuisine { Faker::Indian::Food.cuisine }
+  end
+
+  factory :company do
+    name { Faker::Indian::Company.name }
+    cin  { Faker::Indian::Company.cin }
   end
 end
 ```
@@ -319,12 +467,15 @@ Generated values are **not real identities** and must not be used for fraud, imp
 
 Planned generators:
 
-- Driving License Number
-- CIN Number
-- Demat Account
-- Regional language names
-- Telecom operators
-- Railway PNR
+- [ ] Driving License Number *(format implemented — checksum validation pending)*
+- [x] CIN Number
+- [x] Demat Account
+- [x] Regional language names
+- [x] Telecom operators
+- [x] Railway PNR
+- [ ] Indian company names *(basic generator added — expand data)*
+- [ ] Commerce (HSN codes, invoice numbers)
+- [ ] Education (schools, universities)
 
 ---
 
@@ -339,19 +490,19 @@ Bug reports and pull requests are welcome.
 git checkout -b feature/my-feature
 ```
 
-1. Commit changes
+3. Commit changes
 
 ```bash
 git commit -m "Add new generator"
 ```
 
-1. Push to branch
+4. Push to branch
 
 ```bash
 git push origin feature/my-feature
 ```
 
-1. Open a Pull Request
+5. Open a Pull Request
 
 When adding generators, include YAML data, Ruby class, and RSpec tests.
 
@@ -382,18 +533,28 @@ Released under the MIT License.
 ## Example Output
 
 ```ruby
-{
-  name: "Sneha Kulkarni",
-  regional_name: "அருண் ஐயர்",
-  pan: "BQWPE1234K",
-  aadhaar: "4567 1234 8910",
-  phone: "+91 9123456789",
-  upi: "sneha@okicici",
-  vehicle: "MH14DT4321",
-  address: "221 FC Road, Pune, Maharashtra - 411001",
-  dish: "Masala Dosa",
-  sweet: "Gulab Jamun"
-}
+profile = Faker::Indian.profile
+
+# {
+#   name: "Sneha Kulkarni",
+#   phone: "+91 9123456789",
+#   pan: "BQWPE1234K",
+#   aadhaar: "4567 1234 8910",
+#   gstin: "27BQWPE1234K1Z5",
+#   upi: "sneha@okicici",
+#   vehicle: "MH14DT4321",
+#   address: "221 FC Road, Andheri, Pune, Maharashtra - 411001",
+#   dish: "Masala Dosa"
+# }
+
+Faker::Indian::Languages.full_name(language: :tamil)
+# => "Arun Iyer"
+
+Faker::Indian::Travel.pnr
+# => "4829173056"
+
+Faker::Indian::Company.name
+# => "Hindustan Logistics LLP"
 ```
 
 ---

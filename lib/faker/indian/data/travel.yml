@@ -1,0 +1,23 @@
+stations:
+  - Mumbai CST
+  - New Delhi
+  - Howrah Junction
+  - Bengaluru City
+  - Chennai Central
+  - Secunderabad Junction
+  - Ahmedabad Junction
+  - Pune Junction
+  - Jaipur Junction
+  - Lucknow NR
+
+trains:
+  - Rajdhani Express
+  - Shatabdi Express
+  - Duronto Express
+  - Garib Rath Express
+  - Vande Bharat Express
+  - Deccan Queen
+  - Tamil Nadu Express
+  - Karnataka Express
+  - Punjab Mail
+  - Konkan Kanya Express

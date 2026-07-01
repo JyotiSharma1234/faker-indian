@@ -5,11 +5,13 @@ require "faker"
 module Faker
   module Indian
     class Name
-      _data = Data.load(:name)
+      data = Data.load(:name)
 
-      FIRST_NAMES = _data.fetch(:first_names).freeze
-      LAST_NAMES = _data.fetch(:last_names).freeze
-      PREFIXES = _data.fetch(:prefixes).freeze
+      FIRST_NAMES = data.fetch(:first_names).freeze
+      LAST_NAMES = data.fetch(:last_names).freeze
+      PREFIXES = data.fetch(:prefixes).freeze
+      MIDDLE_NAMES = data.fetch(:middle_names).freeze
+      SUFFIXES = data.fetch(:suffixes).freeze
 
       class << self
         def first_name
@@ -20,12 +22,22 @@ module Faker
           LAST_NAMES.sample(random: random)
         end
 
-        def full_name
+        def middle_name
+          MIDDLE_NAMES.sample(random: random)
+        end
+
+        def full_name(language: nil)
+          return Languages.full_name(language: language) if language
+
           "#{first_name} #{last_name}"
         end
 
         def prefix
           PREFIXES.sample(random: random)
+        end
+
+        def suffix
+          SUFFIXES.sample(random: random)
         end
 
         private

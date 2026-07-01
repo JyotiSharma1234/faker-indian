@@ -1,40 +1,293 @@
+---
 locations:
   Mumbai:
     state: Maharashtra
-    pincode: "400001"
+    pincode: '400001'
   Pune:
     state: Maharashtra
-    pincode: "411001"
+    pincode: '411001'
   Delhi:
     state: Delhi
-    pincode: "110001"
+    pincode: '110001'
   Bengaluru:
     state: Karnataka
-    pincode: "560001"
-  Chennai:
-    state: Tamil Nadu
-    pincode: "600001"
+    pincode: '560001'
   Hyderabad:
     state: Telangana
-    pincode: "500001"
-  Ahmedabad:
-    state: Gujarat
-    pincode: "380001"
+    pincode: '500001'
+  Chennai:
+    state: Tamil Nadu
+    pincode: '600001'
   Kolkata:
     state: West Bengal
-    pincode: "700001"
+    pincode: '700001'
+  Ahmedabad:
+    state: Gujarat
+    pincode: '380001'
   Jaipur:
     state: Rajasthan
-    pincode: "302001"
+    pincode: '302001'
   Lucknow:
     state: Uttar Pradesh
-    pincode: "226001"
-
+    pincode: '226001'
+  Surat:
+    state: Gujarat
+    pincode: '395003'
+  Kanpur:
+    state: Uttar Pradesh
+    pincode: '208001'
+  Nagpur:
+    state: Maharashtra
+    pincode: '440001'
+  Indore:
+    state: Madhya Pradesh
+    pincode: '452001'
+  Bhopal:
+    state: Madhya Pradesh
+    pincode: '462001'
+  Patna:
+    state: Bihar
+    pincode: '800001'
+  Chandigarh:
+    state: Chandigarh
+    pincode: '160001'
+  Coimbatore:
+    state: Tamil Nadu
+    pincode: '641001'
+  Kochi:
+    state: Kerala
+    pincode: '682001'
+  Visakhapatnam:
+    state: Andhra Pradesh
+    pincode: '530001'
+  Thiruvananthapuram:
+    state: Kerala
+    pincode: '695001'
+  Vadodara:
+    state: Gujarat
+    pincode: '390001'
+  Ludhiana:
+    state: Punjab
+    pincode: '141001'
+  Agra:
+    state: Uttar Pradesh
+    pincode: '282001'
+  Nashik:
+    state: Maharashtra
+    pincode: '422001'
+  Faridabad:
+    state: Haryana
+    pincode: '121001'
+  Meerut:
+    state: Uttar Pradesh
+    pincode: '250001'
+  Raipur:
+    state: Chhattisgarh
+    pincode: '492001'
+  Ranchi:
+    state: Jharkhand
+    pincode: '834001'
+  Guwahati:
+    state: Assam
+    pincode: '781001'
+  Amritsar:
+    state: Punjab
+    pincode: '143001'
+  Aurangabad:
+    state: Maharashtra
+    pincode: '431001'
+  Bareilly:
+    state: Uttar Pradesh
+    pincode: '243001'
+  Belgaum:
+    state: Karnataka
+    pincode: '590001'
+  Bhavnagar:
+    state: Gujarat
+    pincode: '364001'
+  Bhubaneswar:
+    state: Odisha
+    pincode: '751001'
+  Bikaner:
+    state: Rajasthan
+    pincode: '334001'
+  Bilaspur:
+    state: Chhattisgarh
+    pincode: '495001'
+  Cuttack:
+    state: Odisha
+    pincode: '753001'
+  Dehradun:
+    state: Uttarakhand
+    pincode: '248001'
+  Dhanbad:
+    state: Jharkhand
+    pincode: '826001'
+  Durgapur:
+    state: West Bengal
+    pincode: '713201'
+  Erode:
+    state: Tamil Nadu
+    pincode: '638001'
+  Gandhinagar:
+    state: Gujarat
+    pincode: '382001'
+  Gaya:
+    state: Bihar
+    pincode: '823001'
+  Gorakhpur:
+    state: Uttar Pradesh
+    pincode: '273001'
+  Guntur:
+    state: Andhra Pradesh
+    pincode: '522001'
+  Hubli:
+    state: Karnataka
+    pincode: '580020'
+  Jabalpur:
+    state: Madhya Pradesh
+    pincode: '482001'
+  Jalandhar:
+    state: Punjab
+    pincode: '144001'
+  Jammu:
+    state: Jammu and Kashmir
+    pincode: '180001'
+  Jamnagar:
+    state: Gujarat
+    pincode: '361001'
+  Jamshedpur:
+    state: Jharkhand
+    pincode: '831001'
+  Jhansi:
+    state: Uttar Pradesh
+    pincode: '284001'
+  Jodhpur:
+    state: Rajasthan
+    pincode: '342001'
+  Kakinada:
+    state: Andhra Pradesh
+    pincode: '533001'
+  Kolhapur:
+    state: Maharashtra
+    pincode: '416003'
+  Kota:
+    state: Rajasthan
+    pincode: '324001'
+  Madurai:
+    state: Tamil Nadu
+    pincode: '625001'
+  Mangalore:
+    state: Karnataka
+    pincode: '575001'
+  Mysuru:
+    state: Karnataka
+    pincode: '570001'
+  Noida:
+    state: Uttar Pradesh
+    pincode: '201301'
+  Panaji:
+    state: Goa
+    pincode: '403001'
+  Prayagraj:
+    state: Uttar Pradesh
+    pincode: '211001'
+  Rajkot:
+    state: Gujarat
+    pincode: '360001'
+  Salem:
+    state: Tamil Nadu
+    pincode: '636001'
+  Shimla:
+    state: Himachal Pradesh
+    pincode: '171001'
+  Srinagar:
+    state: Jammu and Kashmir
+    pincode: '190001'
+  Tiruchirappalli:
+    state: Tamil Nadu
+    pincode: '620001'
+  Udaipur:
+    state: Rajasthan
+    pincode: '313001'
 streets:
-  - MG Road
-  - FC Road
-  - Park Street
-  - Brigade Road
-  - Linking Road
-  - Anna Salai
-  - Ring Road
+- MG Road
+- FC Road
+- Park Street
+- Brigade Road
+- Linking Road
+- Anna Salai
+- Ring Road
+- Outer Ring Road
+- JM Road
+- Karve Road
+- Laxmi Road
+- Church Street
+- Hill Road
+- Elgin Road
+- Gariahat Road
+- Residency Road
+- Ashram Road
+- Law Garden Road
+- VIP Road
+- Rajpur Road
+- Civil Lines Road
+- Airport Road
+- Station Road
+- Mall Road
+- College Road
+- Camac Street
+- Marine Drive
+- Banjara Hills Road No. 12
+- Hauz Khas Village Road
+- Cathedral Road
+state_codes:
+  Maharashtra: MH
+  Karnataka: KA
+  Delhi: DL
+  Tamil Nadu: TN
+  Gujarat: GJ
+  Uttar Pradesh: UP
+  West Bengal: WB
+  Rajasthan: RJ
+  Andhra Pradesh: AP
+  Telangana: TS
+  Kerala: KL
+  Madhya Pradesh: MP
+  Haryana: HR
+  Punjab: PB
+  Bihar: BR
+  Odisha: OR
+  Chhattisgarh: CG
+  Jharkhand: JH
+  Assam: AS
+  Uttarakhand: UK
+  Himachal Pradesh: HP
+  Jammu and Kashmir: JK
+  Goa: GA
+  Chandigarh: CH
+districts:
+- Andheri
+- Koramangala
+- Bandra
+- Powai
+- Salt Lake
+- Connaught Place
+- Hinjewadi
+- Gachibowli
+- T Nagar
+- Adyar
+- Satellite Road
+- Vastrapur
+- Hazratganj
+- Civil Lines
+- MG Road Extension
+landmarks:
+- Near Metro Station
+- Opposite City Mall
+- Behind Railway Station
+- Next to Bus Stand
+- Near Airport
+- Close to IT Park
+- Opposite Hospital
+- Near City Market

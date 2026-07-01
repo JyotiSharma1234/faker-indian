@@ -30,4 +30,22 @@ RSpec.describe Faker::Indian::Name do
       expect(described_class::PREFIXES).to include(described_class.prefix)
     end
   end
+
+  describe ".middle_name" do
+    it "returns a known middle name" do
+      expect(described_class::MIDDLE_NAMES).to include(described_class.middle_name)
+    end
+  end
+
+  describe ".suffix" do
+    it "returns a known suffix" do
+      expect(described_class::SUFFIXES).to include(described_class.suffix)
+    end
+  end
+
+  describe ".full_name with language" do
+    it "delegates to Languages" do
+      expect(described_class.full_name(language: :hindi)).to match(/\A\S+ \S+\z/)
+    end
+  end
 end
